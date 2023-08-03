@@ -14,6 +14,8 @@ class OrderDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 60,
             ),
+
+            // title
             Row(
               children: [
                 Container(
@@ -44,7 +46,8 @@ class OrderDetailsScreen extends StatelessWidget {
                       'THE RAJPUT ROOM',
                       style: GoogleFonts.jetBrainsMono(
                         fontSize: 12,
-                        color: Colors.black,
+                        color: const Color.fromRGBO(0, 0, 0, 1),
+                        fontWeight: FontWeight.w400,
                         letterSpacing: 2,
                       ),
                     ),
@@ -65,9 +68,12 @@ class OrderDetailsScreen extends StatelessWidget {
                 )
               ],
             ),
+
             const SizedBox(
               height: 35,
             ),
+
+            // Delivery fee
             Row(
               children: [
                 Container(
@@ -118,6 +124,246 @@ class OrderDetailsScreen extends StatelessWidget {
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
                       color: const Color.fromRGBO(0, 0, 0, 1)),
+                )
+              ],
+            ),
+
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 1,
+              width: double.infinity,
+              color: const Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            // Taxes and Charges
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'DELIVERY FEE',
+                      style: GoogleFonts.jetBrainsMono(
+                        fontSize: 12,
+                        color: const Color.fromRGBO(0, 0, 0, 1),
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Rambagh Palace, H-1B, Azkaban Facility for Muggles, 304098',
+                      maxLines: 2,
+                      style: GoogleFonts.roboto(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: const Color.fromRGBO(0, 0, 0, 0.7)),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'Change',
+                      style: GoogleFonts.roboto(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: const Color.fromRGBO(0, 0, 0, 0.7)),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Text(
+                  '₹30',
+                  style: GoogleFonts.roboto(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: const Color.fromRGBO(0, 0, 0, 1)),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 1,
+              width: double.infinity,
+              color: const Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'TAXES AND CHARGES',
+                      style: GoogleFonts.jetBrainsMono(
+                        fontSize: 12,
+                        color: const Color.fromRGBO(0, 0, 0, 1),
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: 2,
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Some info about taxes and service charges for transparency',
+                      maxLines: 2,
+                      style: GoogleFonts.roboto(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: const Color.fromRGBO(0, 0, 0, 0.7)),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Text(
+                      'Change',
+                      style: GoogleFonts.roboto(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: const Color.fromRGBO(0, 0, 0, 0.7)),
+                    ),
+                  ],
+                ),
+                const Spacer(),
+                Text(
+                  '₹30',
+                  style: GoogleFonts.roboto(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400,
+                      color: const Color.fromRGBO(0, 0, 0, 1)),
+                )
+              ],
+            ),
+
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 1,
+              width: double.infinity,
+              color: const Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+
+            Row(
+              children: [
+                Text(
+                  'TO PAY',
+                  style: GoogleFonts.jetBrainsMono(
+                    fontSize: 12,
+                    color: const Color.fromRGBO(0, 0, 0, 1),
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 2,
+                  ),
+                ),
+                const Spacer(),
+                Text(
+                  '₹435',
+                  style: GoogleFonts.roboto(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w600,
+                      color: const Color.fromRGBO(0, 0, 0, 1)),
+                )
+              ],
+            ),
+
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: 1,
+              width: double.infinity,
+              color: const Color.fromRGBO(0, 0, 0, 0.5),
+            ),
+
+            Stack(
+              children: [
+                ShaderMask(
+                  blendMode: BlendMode.srcATop,
+                  shaderCallback: (Rect bounds) {
+                    return const LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [Colors.white, Colors.transparent],
+                    ).createShader(bounds);
+                  },
+                  child: Image.asset(
+                    'assets/images/maps.png',
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  top: 94,
+                  left: 89,
+                  child: Column(
+                    children: [
+                      Text(
+                        'ESTIMATED DELIVERY TIME',
+                        style: GoogleFonts.jetBrainsMono(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w200,
+                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          letterSpacing: 2,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        '25 Mins',
+                        style: GoogleFonts.roboto(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w200,
+                            color: const Color.fromRGBO(0, 0, 0, 1)),
+                      ),
+                    ],
+                  ),
+                ),
+                Positioned(
+                  left: 96,
+                  bottom: 27,
+                  child: Container(
+                    width: 180,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: const Color.fromRGBO(0, 87, 255, 1),
+                    ),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            'PROCEED TO PAY',
+                            style: GoogleFonts.jetBrainsMono(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              letterSpacing: 2,
+                            ),
+                          ),
+                          // const Spacer(),
+                          IconButton(
+                              iconSize: 30,
+                              color: const Color.fromRGBO(255, 255, 255, 1),
+                              onPressed: () {},
+                              icon:
+                                  const Icon(Icons.arrow_circle_right_rounded))
+                        ]),
+                  ),
                 )
               ],
             )
