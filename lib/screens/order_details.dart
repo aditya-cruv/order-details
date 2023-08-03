@@ -12,12 +12,13 @@ class OrderDetailsScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 60,
+              height: 70,
             ),
 
-            // title
+            // title part
             Row(
               children: [
+                // back button
                 Container(
                   height: 30,
                   width: 30,
@@ -39,7 +40,6 @@ class OrderDetailsScreen extends StatelessWidget {
                   width: 64,
                 ),
                 Column(
-                  // mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -73,7 +73,7 @@ class OrderDetailsScreen extends StatelessWidget {
               height: 35,
             ),
 
-            // Delivery fee
+            // number of items
             Row(
               children: [
                 Container(
@@ -128,6 +128,7 @@ class OrderDetailsScreen extends StatelessWidget {
               ],
             ),
 
+            // spacing and horizontal line
             const SizedBox(
               height: 20,
             ),
@@ -140,7 +141,7 @@ class OrderDetailsScreen extends StatelessWidget {
               height: 20,
             ),
 
-            // Taxes and Charges
+            // Delivery Fee part
             Row(
               children: [
                 Column(
@@ -160,7 +161,6 @@ class OrderDetailsScreen extends StatelessWidget {
                     ),
                     Text(
                       'Rambagh Palace, H-1B, Azkaban Facility for Muggles, 304098',
-                      maxLines: 2,
                       style: GoogleFonts.roboto(
                           fontSize: 10,
                           fontWeight: FontWeight.w400,
@@ -172,9 +172,12 @@ class OrderDetailsScreen extends StatelessWidget {
                     Text(
                       'Change',
                       style: GoogleFonts.roboto(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w400,
-                          color: const Color.fromRGBO(0, 0, 0, 0.7)),
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                        color: const Color.fromRGBO(0, 0, 0, 0.7),
+                        decoration: TextDecoration.underline,
+                        decorationStyle: TextDecorationStyle.dashed,
+                      ),
                     ),
                   ],
                 ),
@@ -188,6 +191,8 @@ class OrderDetailsScreen extends StatelessWidget {
                 )
               ],
             ),
+
+            // spacing and horizontal line
             const SizedBox(
               height: 20,
             ),
@@ -199,6 +204,8 @@ class OrderDetailsScreen extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
+
+            // Taxes and charges part
             Row(
               children: [
                 Column(
@@ -232,7 +239,9 @@ class OrderDetailsScreen extends StatelessWidget {
                       style: GoogleFonts.roboto(
                           fontSize: 10,
                           fontWeight: FontWeight.w400,
-                          color: const Color.fromRGBO(0, 0, 0, 0.7)),
+                          color: const Color.fromRGBO(0, 0, 0, 0.7),
+                          decoration: TextDecoration.underline,
+                          decorationStyle: TextDecorationStyle.dashed),
                     ),
                   ],
                 ),
@@ -247,6 +256,7 @@ class OrderDetailsScreen extends StatelessWidget {
               ],
             ),
 
+            // spacing and horizontal line
             const SizedBox(
               height: 20,
             ),
@@ -259,6 +269,7 @@ class OrderDetailsScreen extends StatelessWidget {
               height: 20,
             ),
 
+            // To pay part
             Row(
               children: [
                 Text(
@@ -281,6 +292,7 @@ class OrderDetailsScreen extends StatelessWidget {
               ],
             ),
 
+            // spacing and horizontal line
             const SizedBox(
               height: 20,
             ),
@@ -290,10 +302,11 @@ class OrderDetailsScreen extends StatelessWidget {
               color: const Color.fromRGBO(0, 0, 0, 0.5),
             ),
 
+            // map and pay button
             Stack(
               children: [
                 ShaderMask(
-                  blendMode: BlendMode.srcATop,
+                  blendMode: BlendMode.dstOut,
                   shaderCallback: (Rect bounds) {
                     return const LinearGradient(
                       begin: Alignment.topCenter,
@@ -305,10 +318,11 @@ class OrderDetailsScreen extends StatelessWidget {
                     'assets/images/maps.png',
                     width: double.infinity,
                     fit: BoxFit.cover,
+                    height: 320,
                   ),
                 ),
                 Positioned(
-                  top: 94,
+                  top: 110,
                   left: 89,
                   child: Column(
                     children: [
@@ -338,13 +352,15 @@ class OrderDetailsScreen extends StatelessWidget {
                   left: 96,
                   bottom: 27,
                   child: Container(
-                    width: 180,
+                    width: 170,
+                    height: 33,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       color: const Color.fromRGBO(0, 87, 255, 1),
                     ),
                     child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             'PROCEED TO PAY',
@@ -355,9 +371,8 @@ class OrderDetailsScreen extends StatelessWidget {
                               letterSpacing: 2,
                             ),
                           ),
-                          // const Spacer(),
                           IconButton(
-                              iconSize: 30,
+                              // iconSize: 24,
                               color: const Color.fromRGBO(255, 255, 255, 1),
                               onPressed: () {},
                               icon:
